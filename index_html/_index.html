@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+	<title>Welcome to Cobalt Engine!</title>
+	<style>
+		@font-face {
+			font-family: Roboto;
+			font-weight: 100;
+			font-style: normal;
+			src: url("robotol.woff") format('woff');
+		}
+		@font-face {
+			font-family: Roboto;
+			font-weight: 500;
+			font-style: normal;
+			src: url("robotom.woff") format('woff');
+		}
+		article{
+			width: 492px;
+			margin: 56px auto;
+			color: #334572;
+			font: 100 25px/1.1em Roboto;
+		}
+		h1{
+			font-weight: 500;
+			font-size: 32px;
+			text-align: center;
+			text-transform: uppercase;
+			margin: 0;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #334572;
+		}
+		p{
+		    margin: 15px 0;
+		    font-size: 20px;
+		}
+		.emphasis {
+			position: relative;
+			background: #334572;
+			padding: 5px 15px;
+			color: white;
+			margin: 0;
+		}
+		.emphasis::before,
+		.emphasis::after{
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+		}
+		.emphasis::before {
+			left: 0;
+			top: 0;   
+			border-top: 10px solid white; 
+			border-right: 10px solid transparent;
+		}
+		.emphasis::after {
+			right: 0;
+			bottom: 0;   
+			border-bottom: 10px solid white; 
+			border-left: 10px solid transparent;
+		}
+		a{
+			color: #334572;
+			text-decoration: none;
+			border-bottom: 1px solid #334572;
+		}
+		a:hover{
+			color: #446e9b;
+			border-color: #446e9b;
+		}
+		.happy{
+			font-weight: 500;
+			font-size: 28px;
+			text-align: center;
+			margin-top: 24px;
+			padding-top: 8px;
+			border-top: 1px solid #334572;
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<h1>Welcome to Cobalt Engine!</h1>
+		<p>To view your presentation execute:</p>
+		<p class="emphasis">co debug</p>
+		<p>To let Cobalt engine track file changes and build
+			<br/>the project automatically execute:</p>
+		<p class="emphasis">co debug --watch</p>
+		<p>In case you would like to run the local server for your 
+			<br/>project and to track changes in real-time execute:</p>
+		<p class="emphasis">co debug --live</p>
+		<p>Your project will be available on the localhost:8000.</p>
+		<p>For more information refer to our <a href="https://cobalt-engine.com/documentation">documentation</a>
+			<br/>or execute:</p>
+		<p class="emphasis">co --help</p>
+		<p class="happy">Happy Cobalting!</p>
+	</article>
+</body>
+</html>
