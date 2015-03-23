@@ -120,9 +120,8 @@
 }
 
 .parag1 {
-	left:20px;
-	top:300px;
-    background-color: #eb5e4c;
+	padding: 0;
+	background-color: #eb5e4c;
     height: 142px;
 }
 
