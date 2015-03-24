@@ -7,6 +7,7 @@ var prev = document.getElementsByClassName('goto-prev')[0],
     addall1 = document.getElementsByClassName('addall addall1')[0];
     addall2 = document.getElementsByClassName('addall addall2')[0];
     addall3 = document.getElementsByClassName('addall addall3')[0];
+    checkbox1 = document.querySelectorAll('.documents input[type=checkbox]');
 
 
 next.addEventListener('click', function(){
@@ -28,5 +29,12 @@ prev.addEventListener('click', function(){
 });
 
 addall1.addEventListener('click', function(){
+  addall1.classList.remove('addall');
+  addall1.classList.add('removeall');
+  [].forEach.call(checkbox1, function(item, index){
+    console.log(item, index);
+    checkbox1[index].setAttribute("checked", "checked");
+    });
+  
 });
 
