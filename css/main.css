@@ -24,6 +24,15 @@
 	-webkit-transform: translate3d(-1024px, 0, 0);	
 }
 
+img{
+    position: absolute;
+    margin: auto;
+    top: -420px;
+    left: -100px;
+    right: 0;
+    bottom: 0;
+}
+
 .indicators {
 	position: absolute;
 	top:97%;	
@@ -120,13 +129,11 @@
 }
 
 .parag1 {
-	padding: 0;
 	background-color: #eb5e4c;
     height: 142px;
 }
 
 .parag2 {
-	padding-left: 20px;
 	background-color: #00b9e6;
 	height: 142px;
 }
