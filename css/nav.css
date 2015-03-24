@@ -1,0 +1,22 @@
+.indicators {
+	position: absolute;
+	top:97%;	
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: gray;
+	margin: 0 2px;
+
+}
+.indicator1 {
+	left:48%;
+		}
+
+.indicator2 {
+	left:50%;
+}
+
+.active{
+	background: #00b9e6;
+}
+
