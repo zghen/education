@@ -4,8 +4,9 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
     secondPage = document.getElementById('second-page'),
     secondPageAttachment = document.querySelector('#second-page .attachment'),
     checkboxCol = document.getElementsByClassName('col'),
-    sourceList = document.querySelectorAll('#first-page li');
     counter = secondPage.getElementsByClassName('attachment-counter')[0],
+    sourceList = document.querySelectorAll('#first-page li');
+    
 
 
   indicator2.addEventListener('click', function(){
@@ -35,7 +36,6 @@ function fireEvent(element,event){
   [].forEach.call(checkboxCol, function(col){
       var addAll = col.querySelector('.addall'),
           checkboxes = col.querySelectorAll('input[type=checkbox]');
-
       addAll.addEventListener('click', function(){
           if(addAll.classList.contains('removeall')){
             addAll.classList.remove('removeall');
@@ -49,7 +49,8 @@ function fireEvent(element,event){
         if(addAll.classList.contains('removeall')){
           checkbox.checked = true;
           fireEvent(checkbox, 'change');
-        }else{
+        }
+        else{
           checkbox.checked = false;
           fireEvent(checkbox, 'change');
         }
@@ -61,27 +62,29 @@ function fireEvent(element,event){
     var checkbox = li.querySelector('input[type=checkbox]'),
         p1 = li.querySelectorAll('p')[0],
         p2 = li.querySelectorAll('p')[1];
-        count = 0;
+		addAll = document.querySelector('.addall'),
   checkbox.addEventListener('change', function(event){
     var li = document.createElement('li'),
-      createdLi = secondPage.querySelector('[index="' + index + '"]');
+      	createdLi = secondPage.querySelector('[index="' + index + '"]');
         if(checkbox.checked && !createdLi){
           li.setAttribute('index', index);
           li.classList.add('attached');
-          li.innerHTML = "<p>" + p1.innerHTML + "</p><p>" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p>";
-          li.querySelector('button').addEventListener('click', function(){
+          li.innerHTML = "<p class=\"author-result\">" + "<p class=\"source-icon\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
+          li.querySelector('button').addEventListener('click', function(col){
+          	count = document.getElementsByClassName('attached').length;
             checkbox.checked = false;
             fireEvent(checkbox, 'change');
-            count = count - 1;
-            counter.innerHTML = count  + " attached files";
+            counter.innerHTML = count + " attached files";            
             });
-          secondPageAttachment.appendChild(li);                    
-          count = count + 1;
-          counter.innerHTML = count  + " attached files";
+          secondPageAttachment.appendChild(li);
+          count = document.getElementsByClassName('attached').length;
+          counter.innerHTML = count + " attached files";
         }else{
           if(createdLi){
             secondPageAttachment.removeChild(createdLi);
             fireEvent(checkbox, 'change');
+            count = document.getElementsByClassName('attached').length;
+            counter.innerHTML = count + " attached files";
           }
         }
     })
