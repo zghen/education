@@ -24,13 +24,25 @@
   background-color: #00b9e6;
 }
 
-.attachment{
+.block4{
   position: absolute;
   height: 379px;
   width:100%;
   top:142px;
   background-color: #ffffff;
   z-index: 0;
+  border-bottom: 1px solid #e0dede;
+}
+
+.attachment{
+  position: absolute;
+  height: 270px;
+  width:100%;
+  top:109px;
+  background-color: #ffffff;
+  z-index: 0;  
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .send{
@@ -51,14 +63,52 @@
 
 .name{
   position: absolute;
-  margin-left:10px;
-  left:10px;
-  width:100%;
+  top: 40px;
+  left: 40px;
+  width: 300px;
 }
 
 .email{
   position: absolute;
-  margin-left:10px;
-  left:10px;
-  width:100%;
+  margin-left:20px;
+  top: 40px;
+  left:340px;
+  width:300px;
+}
+
+.message{
+    position: absolute;
+    left:40px;
+    top:70px;
+    width:620px;
+  }
+
+.attachment-counter{
+  position: absolute;
+  margin-left:20px;
+  top: 90px;
+  left:20px;
+  width:300px;
+}
+
+.attached {
+  list-style: none;
+  margin: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: Roboto-Medium;
+  color: black;
+  position: relative;
+}
+
+.trashcan{
+  position: absolute;
+  outline: none;
+  left:400px;
+  background: url('../images/trashcan.png'); 
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+  width: 16px;
+  height: 16px;
 }
