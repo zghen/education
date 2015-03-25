@@ -1,0 +1,64 @@
+#second-page{
+  border-radius: 4px;
+  box-shadow:1px 1px 2px #ccc;
+  position: absolute;
+  width: 727px;
+  height: 580px;
+  left: 145px;
+  top: 127px;
+  vertical-align: center;
+  background-color: #ffffff;
+}
+  .second-header {
+  background-image: url('../images/header4.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: absolute;
+  border:1px solid #ccc;
+  border-radius: 4px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 142px;
+  z-index: 1;
+  background-color: #00b9e6;
+}
+
+.attachment{
+  position: absolute;
+  height: 379px;
+  width:100%;
+  top:142px;
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+.send{
+  border: none;
+  padding: 0;
+  padding-top: 10px;
+  outline: none;
+  background: none;
+  color:#00b9e6;
+  font-family: Roboto;
+  font-size: 16px;
+  text-transform: uppercase;
+  position: absolute;
+  top:91%;
+  left: 90%;
+  z-index: 3;
+}
+
+.name{
+  position: absolute;
+  margin-left:10px;
+  left:10px;
+  width:100%;
+}
+
+.email{
+  position: absolute;
+  margin-left:10px;
+  left:10px;
+  width:100%;
+}

@@ -5,6 +5,7 @@
         <meta name="keywords" content="ключевые слова">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/block.css">
+        <link rel="stylesheet" href="css/block2.css">
         <link rel="stylesheet" href="css/scroll.css">
         <link rel="stylesheet" href="css/nav.css">
         <title>My test project</title>
@@ -20,7 +21,7 @@
             <div class="page first current" id="first-page">
                 <div class="documents col">
                     <div class="blockhead header1"></div>
-                <div class="scroll" id="scroller1">
+                <div class="scroll scroller1">
                           <ul class="articles-list">
                            <li><input type="checkbox">
                                 <p class="title-printed">Article Name</p> 
@@ -104,13 +105,12 @@
                             </li>
                         </ul>
                 </div>
-                    <div class="footer"></div>
-                    <button class="addall addall1">add all</button>                                        
+                    <button class="addall addall1" id="add1">add all</button>                                        
                 </div>
 
                 <div class="links col">
                     <div class="blockhead header2"></div>
-                    <div class="scroll" id="scroller2">
+                    <div class="scroll scroller2">
                     <ul class="articles-list">
                            <li><input type="checkbox">
                                 <p class="title-printed">Article Name</p> 
@@ -194,12 +194,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer"></div>
-                    <button class="addall addall2">add all</button>
+                    <button class="addall addall2" id="add2">add all</button>
                 </div>
                 <div class="science-lab col">
                     <div class="blockhead header3"></div>
-                    <div class="scroll" id="scroller3">
+                    <div class="scroll scroller3">
                     <ul class="articles-list">
                                                       <li><input type="checkbox">
                                 <p class="title-printed">Article Name</p> 
@@ -283,18 +282,26 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer"></div>
-                    <button class="addall addall3">add all</button>
+                    <button class="addall addall3" id="add3">add all</button>
                 </div>
             </div>
 
-            <div class="page second right" id="second-page"></div>
+            <div class="page second right" id="second-page">
+                <div class="second-header"></div>
+                <div class="attachment scroll scroller3">
+                    <div class="sendmail">
+                        <div class="name">User name</div>
+                        <div class="email">useremail@mail.com</div>
+                        <div class="message">message text</div>
+                    </div>
+                </div>
+                <button class="send">send</button>  
+            </div>
+
             <p class="indicators indicator1 active"></p>
             <p class="indicators indicator2"></p>          
         </div>
-        
-        <button class="goto-next">next</button>
-        <button class="goto-prev">prev</button> 
+         
         <script src='js/app.js'></script>
         </body>
 </html>

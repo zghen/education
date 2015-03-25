@@ -110,29 +110,15 @@ p{
   vertical-align: -10px;
 }
 .col input[type=checkbox]{
-  background: url(../images/checkbox-empty.png);
+  background: url('../images/checkbox-empty.png');
   height: 16px;
   width: 16px;
 }
 .col input[type=checkbox]:checked{
-  background: url(../images/checkbox-checked.png);
+  background: url('../images/checkbox-checked.png');
   height: 16px;
   width: 16px;
   padding: 0 0 0 0px;
-}
-
-
-
-.footer {
-  border-width: 1px;
-  border-color: #e0dede;
-  border-style: solid;
-  position: absolute;
-  top: 90%;
-  height:56px;
-  width:100%;
-  z-index: 3;
-  background-color: #ffffff;
 }
 
 .addall, 
@@ -146,8 +132,8 @@ p{
 	font-size: 16px;
 	text-transform: uppercase;
 	position: absolute;
-	top:90%;
-	left: 65%;
+	top:91%;
+	left: 66%;
 	z-index: 3;
 }
 
@@ -200,3 +186,24 @@ p{
 }
 
 
+.Прямоугольник_2 {
+  border-width: 1px;
+  border-color: rgb( 224, 222, 222 );
+  border-style: solid;
+  background-color: rgb( 255, 255, 255 );
+  position: absolute;
+  left: 136px;
+  top: 644px;
+  width: 749px;
+  height: 64px;
+  z-index: 419;
+}
+.Прямоугольник_1 {
+  background-color: rgb( 0, 185, 230 );
+  position: absolute;
+  left: 136px;
+  top: 127px;
+  width: 748px;
+  height: 142px;
+  z-index: 418;
+}
