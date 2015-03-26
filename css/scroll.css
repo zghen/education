@@ -37,3 +37,14 @@ background-color:#0f9d58;
 height: 2px;
 border-radius:10px;
 }
+
+.scroller4::-webkit-scrollbar{
+width:4px;
+background-color: white;
+}
+
+.scroller4::-webkit-scrollbar-thumb{
+background-color:#00b9e6;
+height: 2px;
+border-radius:10px;
+}

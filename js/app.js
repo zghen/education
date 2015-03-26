@@ -132,17 +132,17 @@ function fireEvent(element,event){
  [].forEach.call(checkboxes, function(checkbox, cIndex){
   checkbox.addEventListener('change', function(event){
   var li = document.createElement('li'),
-   icon = colIndex === 0 ? 'documents-icon' :  colIndex === 1 ? 'links-icon' : 'science-icon';
+   icon = colIndex === 0 ? 'icon documents-icon' :  colIndex === 1 ? 'icon links-icon' : 'icon science-icon';
    createdLi = secondPage.querySelector('[index="' + colIndex + '-' + cIndex + '"]');
    if(checkbox.checked && !createdLi){
      li.setAttribute('index',  colIndex + '-' + cIndex);
      li.classList.add('attached');
      li.innerHTML = "<p class=\"author-result\">" + "<p class=\"" + icon + "\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
      li.querySelector('button').addEventListener('click', function(col){
-    count = document.getElementsByClassName('attached').length;
-    checkbox.checked = false;
-    fireEvent(checkbox, 'change');
-    counter.innerHTML = count + " attached files";            
+        count = document.getElementsByClassName('attached').length;
+        checkbox.checked = false;
+        fireEvent(checkbox, 'change');
+        counter.innerHTML = count + " attached files";            
     });
      secondPageAttachment.appendChild(li);
      count = document.getElementsByClassName('attached').length;
