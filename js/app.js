@@ -59,6 +59,46 @@ function fireEvent(element,event){
     }
    });
     });
+
+     [].forEach.call(checkboxes, function(checkbox){
+   checkbox.addEventListener('change', function(){
+    var selected = document.querySelectorAll('.links input[type=checkbox]:checked');
+    
+    if(ignoreAction){
+     return
+    }
+   
+    if(selected.length < checkboxes.length){
+     addAll.classList.remove('removeall');
+     addAll.innerHTML = 'add all';
+    }
+
+    if(selected.length === checkboxes.length){
+     addAll.classList.add('removeall');
+     addAll.innerHTML = 'remove all';
+    }
+   });
+    });
+
+      [].forEach.call(checkboxes, function(checkbox){
+   checkbox.addEventListener('change', function(){
+    var selected = document.querySelectorAll('.science input[type=checkbox]:checked');
+    
+    if(ignoreAction){
+     return
+    }
+   
+    if(selected.length < checkboxes.length){
+     addAll.classList.remove('removeall');
+     addAll.innerHTML = 'add all';
+    }
+
+    if(selected.length === checkboxes.length){
+     addAll.classList.add('removeall');
+     addAll.innerHTML = 'remove all';
+    }
+   });
+    });
     
       addAll.addEventListener('click', function(){
           if(addAll.classList.contains('removeall')){
