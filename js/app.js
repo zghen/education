@@ -9,6 +9,9 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
     counter = secondPage.getElementsByClassName('attachment-counter')[0],
     sourceList = document.querySelectorAll('#first-page li'),
     send = document.getElementsByClassName('send')[0],
+    startX, isStart, isMove, currentIndex = 0,
+    startTime = Date.now(),
+    timeDiff = Date.now() - startTime,
     ignoreAction;
     
 
@@ -21,23 +24,38 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
       alert(name + '\r' + email + '\r' + message + '\r' + aList);
     });
 
-  indicator2.addEventListener('click', function(){
-    firstPage.classList.remove('current');
-    secondPage.classList.remove('right');
-    firstPage.classList.add('left');
-    secondPage.classList.add('current');
-    indicator1.classList.remove('active');
-    indicator2.classList.add('active');
-  });
+  	document.addEventListener('mouseup' ,onUp);
+	document.addEventListener('mousedown' ,onDown);
+	document.addEventListener('mousemove' ,onMove);
 
-  indicator1.addEventListener('click', function(){
-    firstPage.classList.remove('left');
-    secondPage.classList.remove('current');
-    firstPage.classList.add('current');
-    secondPage.classList.add('right');
-    indicator2.classList.remove('active');
-    indicator1.classList.add('active');
-  });
+	function onDown(){
+		startX = event.clientX;
+		isMove = false;
+		}
+	
+	function onMove(){
+		isMove = true;
+		}
+	
+	function onUp(){
+		if(isMove){
+			if(startX - event.clientX > 5){
+				firstPage.classList.remove('current');
+    			secondPage.classList.remove('right');
+    			firstPage.classList.add('left');
+    			secondPage.classList.add('current');
+    			indicator1.classList.remove('active');
+    			indicator2.classList.add('active');
+		}
+		else{	firstPage.classList.remove('left');
+    			secondPage.classList.remove('current');
+    			firstPage.classList.add('current');
+    			secondPage.classList.add('right');
+    			indicator2.classList.remove('active');
+    			indicator1.classList.add('active');
+				}
+			}
+		}
 
 function fireEvent(element,event){
     var evt = document.createEvent("HTMLEvents");
