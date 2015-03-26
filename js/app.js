@@ -35,9 +35,31 @@ function fireEvent(element,event){
     return !element.dispatchEvent(evt);
 }
   //documents.col checkboxes
-  [].forEach.call(checkboxCol1, function(col){
+    [].forEach.call(checkboxCol1, function(col){
       var addAll = col.querySelector('.addall'),
           checkboxes = col.querySelectorAll('input[type=checkbox]');
+    
+    
+    [].forEach.call(checkboxes, function(checkbox){
+   checkbox.addEventListener('change', function(){
+    var selected = document.querySelectorAll('.documents input[type=checkbox]:checked');
+    
+    if(ignoreAction){
+     return
+    }
+   
+    if(selected.length < checkboxes.length){
+     addAll.classList.remove('removeall');
+     addAll.innerHTML = 'add all';
+    }
+
+    if(selected.length === checkboxes.length){
+     addAll.classList.add('removeall');
+     addAll.innerHTML = 'remove all';
+    }
+   });
+    });
+    
       addAll.addEventListener('click', function(){
           if(addAll.classList.contains('removeall')){
             addAll.classList.remove('removeall');
@@ -46,86 +68,34 @@ function fireEvent(element,event){
             addAll.classList.add('removeall');
             addAll.innerHTML = 'remove all';
           }
-
+    
+   ignoreAction = true; 
   [].forEach.call(checkboxes, function(checkbox){
-        if(addAll.classList.contains('removeall')){
-          checkbox.checked = true;
-          fireEvent(checkbox, 'change');
-        }
-        else{
-          checkbox.checked = false;
-          fireEvent(checkbox, 'change');
-        }
-      });
+   if(addAll.classList.contains('removeall')){
+     checkbox.checked = true;
+     fireEvent(checkbox, 'change');
+   }
+   else{
+     checkbox.checked = false;
+     fireEvent(checkbox, 'change');
+   }
+  });
+  ignoreAction = false; 
+  
     });
   });
-
-   //links.col checkboxes
-  [].forEach.call(checkboxCol2, function(col){
-      var addAll = col.querySelector('.addall'),
-          checkboxes = col.querySelectorAll('input[type=checkbox]');
-      addAll.addEventListener('click', function(){
-          if(addAll.classList.contains('removeall')){
-            addAll.classList.remove('removeall');
-            addAll.innerHTML = 'add all';
-          }else{
-            addAll.classList.add('removeall');
-            addAll.innerHTML = 'remove all';
-          }
-
-  [].forEach.call(checkboxes, function(checkbox){
-        if(addAll.classList.contains('removeall')){
-          checkbox.checked = true;
-          fireEvent(checkbox, 'change');
-        }
-        else{
-          checkbox.checked = false;
-          fireEvent(checkbox, 'change');
-        }
-      });
-    });
-  });
-
-   //science-lab.col checkboxes
-  [].forEach.call(checkboxCol3, function(col){
-      var addAll = col.querySelector('.addall'),
-          checkboxes = col.querySelectorAll('input[type=checkbox]');
-      addAll.addEventListener('click', function(){
-          if(addAll.classList.contains('removeall')){
-            addAll.classList.remove('removeall');
-            addAll.innerHTML = 'add all';
-          }else{
-            addAll.classList.add('removeall');
-            addAll.innerHTML = 'remove all';
-          }
-
-  [].forEach.call(checkboxes, function(checkbox){
-        if(addAll.classList.contains('removeall')){
-          checkbox.checked = true;
-          fireEvent(checkbox, 'change');
-        }
-        else{
-          checkbox.checked = false;
-          fireEvent(checkbox, 'change');
-        }
-      });
-    });
-  });
-
-
 
   [].forEach.call(sourceList, function(li, index){
-    var checkbox = li.querySelector('documents call input[type=checkbox]'),
+    var checkbox = li.querySelectorAll('.documents.col input[type=checkbox]'),
         p1 = li.querySelectorAll('p')[0],
         p2 = li.querySelectorAll('p')[1];
-		    addAll = document.querySelector('.addall'),
   checkbox.addEventListener('change', function(event){
     var li = document.createElement('li'),
       	createdLi = secondPage.querySelector('[index="' + index + '"]');
         if(checkbox.checked && !createdLi){
           li.setAttribute('index', index);
           li.classList.add('attached');
-          li.innerHTML = "<p class=\"author-result\">" + "<p class=\"source-icon\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
+          li.innerHTML = "<p class=\"author-result\">" + "<p class=\"documents-icon\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
           li.querySelector('button').addEventListener('click', function(col){
           	count = document.getElementsByClassName('attached').length;
             checkbox.checked = false;
@@ -144,4 +114,4 @@ function fireEvent(element,event){
           }
         }
     })
-});
+});  

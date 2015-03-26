@@ -66,6 +66,11 @@
   top: 40px;
   left: 40px;
   width: 300px;
+  font-family: Roboto;
+  font-size: 12px;
+  outline: none;
+  border:none;
+  border-bottom: solid blue;
 }
 
 .email{
@@ -73,14 +78,24 @@
   margin-left:20px;
   top: 40px;
   left:340px;
-  width:300px;
+  width:300px;  
+  font-family: Roboto;
+  font-size: 12px;
+  outline: none;
+  border:none;
+  border-bottom: solid blue;
 }
 
 .message{
     position: absolute;
     left:40px;
     top:70px;
-    width:620px;
+    width:620px;    
+    font-family: Roboto;
+    font-size: 12px;
+    outline: none;
+    border:none;
+    border-bottom: solid blue;
   }
 
 .attachment-counter{
