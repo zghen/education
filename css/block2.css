@@ -128,12 +128,30 @@
   margin-right:160px;
 }
 
-.source-icon{
+.documents-icon{
+  margin: 0;
+  position: absolute;
+  width:16px;
+  height: 16px;
+  background-image: url('../images/docs.png');
+  left:-30px;
+}
+
+.links-icon{
   margin: 0;
   position: absolute;
   width:16px;
   height: 16px;
   background-image: url('../images/links.png');
+  left:-30px;
+}
+
+.science-icon{
+  margin: 0;
+  position: absolute;
+  width:16px;
+  height: 16px;
+  background-image: url('../images/science.png');
   left:-30px;
 }
 

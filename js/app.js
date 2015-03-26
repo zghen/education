@@ -7,7 +7,8 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
     checkboxCol2 = document.getElementsByClassName('links col'),
     checkboxCol3 = document.getElementsByClassName('science-lab col'),
     counter = secondPage.getElementsByClassName('attachment-counter')[0],
-    sourceList = document.querySelectorAll('#first-page li');
+    sourceList = document.querySelectorAll('#first-page li'),
+    ignoreAction;
     
 
 
@@ -34,8 +35,7 @@ function fireEvent(element,event){
     evt.initEvent(event, true, true ); // event type,bubbling,cancelable
     return !element.dispatchEvent(evt);
 }
-  //documents.col checkboxes
-    [].forEach.call(checkboxCol1, function(col){
+  [].forEach.call([checkboxCol1[0], checkboxCol2[0], checkboxCol3[0]], function(col){
       var addAll = col.querySelector('.addall'),
           checkboxes = col.querySelectorAll('input[type=checkbox]');
     
@@ -85,33 +85,36 @@ function fireEvent(element,event){
     });
   });
 
-  [].forEach.call(sourceList, function(li, index){
-    var checkbox = li.querySelectorAll('.documents.col input[type=checkbox]'),
-        p1 = li.querySelectorAll('p')[0],
-        p2 = li.querySelectorAll('p')[1];
+  [].forEach.call([checkboxCol1[0], checkboxCol2[0], checkboxCol3[0]], function(col, colIndex){
+    var checkboxes = col.querySelectorAll('input[type=checkbox]'),
+        p1 = col.querySelectorAll('p')[0],
+        p2 = col.querySelectorAll('p')[1];
+ [].forEach.call(checkboxes, function(checkbox, cIndex){
   checkbox.addEventListener('change', function(event){
-    var li = document.createElement('li'),
-      	createdLi = secondPage.querySelector('[index="' + index + '"]');
-        if(checkbox.checked && !createdLi){
-          li.setAttribute('index', index);
-          li.classList.add('attached');
-          li.innerHTML = "<p class=\"author-result\">" + "<p class=\"documents-icon\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
-          li.querySelector('button').addEventListener('click', function(col){
-          	count = document.getElementsByClassName('attached').length;
-            checkbox.checked = false;
-            fireEvent(checkbox, 'change');
-            counter.innerHTML = count + " attached files";            
-            });
-          secondPageAttachment.appendChild(li);
-          count = document.getElementsByClassName('attached').length;
-          counter.innerHTML = count + " attached files";
-        }else{
-          if(createdLi){
-            secondPageAttachment.removeChild(createdLi);
-            fireEvent(checkbox, 'change');
-            count = document.getElementsByClassName('attached').length;
-            counter.innerHTML = count + " attached files";
-          }
-        }
-    })
-});  
+  var li = document.createElement('li'),
+   icon = colIndex === 0 ? 'documents-icon' :  colIndex === 1 ? 'links-icon' : 'science-icon';
+   createdLi = secondPage.querySelector('[index="' + colIndex + '-' + cIndex + '"]');
+   if(checkbox.checked && !createdLi){
+     li.setAttribute('index',  colIndex + '-' + cIndex);
+     li.classList.add('attached');
+     li.innerHTML = "<p class=\"author-result\">" + "<p class=\"" + icon + "\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
+     li.querySelector('button').addEventListener('click', function(col){
+    count = document.getElementsByClassName('attached').length;
+    checkbox.checked = false;
+    fireEvent(checkbox, 'change');
+    counter.innerHTML = count + " attached files";            
+    });
+     secondPageAttachment.appendChild(li);
+     count = document.getElementsByClassName('attached').length;
+     counter.innerHTML = count + " attached files";
+   }else{
+     if(createdLi){
+    secondPageAttachment.removeChild(createdLi);
+    fireEvent(checkbox, 'change');
+    count = document.getElementsByClassName('attached').length;
+    counter.innerHTML = count + " attached files";
+     }
+   }
+  })
+ })
+});
