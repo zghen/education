@@ -8,9 +8,18 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
     checkboxCol3 = document.getElementsByClassName('science-lab col'),
     counter = secondPage.getElementsByClassName('attachment-counter')[0],
     sourceList = document.querySelectorAll('#first-page li'),
+    send = document.getElementsByClassName('send')[0],
     ignoreAction;
     
 
+  send.addEventListener('click', function(){
+   var aList = '',
+      name = document.getElementById('name').value,
+      email = document.getElementById('email').value,
+      message = document.getElementById('message').value;
+   [].forEach.call(document.querySelectorAll('#second-page .author-info'), function(a){aList = aList + a.innerText + '\r'}) ;
+      alert(name + '\r' + email + '\r' + message + '\r' + aList);
+    });
 
   indicator2.addEventListener('click', function(){
     firstPage.classList.remove('current');
