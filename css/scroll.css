@@ -1,4 +1,4 @@
-.scroll {
+.scroll{
   overflow-x: hidden;
   overflow-y: scroll;
   height: 378px;
@@ -6,45 +6,45 @@
 }
 
 .scroller1::-webkit-scrollbar{
-width:4px;
+width: 4px;
 background-color: white;
 }
 
 .scroller1::-webkit-scrollbar-thumb{
-background-color:#eb5e4c;
+background-color: #eb5e4c;
 height: 2px;
-border-radius:10px;
+border-radius: 10px;
 }
 
 .scroller2::-webkit-scrollbar{
-width:4px;
+width: 4px;
 background-color: white;
 }
 
 .scroller2::-webkit-scrollbar-thumb{
-background-color:#00b9e6;
+background-color: #00b9e6;
 height: 2px;
-border-radius:10px;
+border-radius: 10px;
 }
 
 .scroller3::-webkit-scrollbar{
-width:4px;
+width: 4px;
 background-color: white;
 }
 
 .scroller3::-webkit-scrollbar-thumb{
-background-color:#0f9d58;
+background-color: #0f9d58;
 height: 2px;
-border-radius:10px;
+border-radius: 10px;
 }
 
 .scroller4::-webkit-scrollbar{
-width:4px;
+width: 4px;
 background-color: white;
 }
 
 .scroller4::-webkit-scrollbar-thumb{
-background-color:#00b9e6;
+background-color: #00b9e6;
 height: 2px;
-border-radius:10px;
+border-radius: 10px;
 }

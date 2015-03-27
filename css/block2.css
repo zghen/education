@@ -1,6 +1,6 @@
 #second-page{
   border-radius: 4px;
-  box-shadow:1px 1px 2px #ccc;
+  box-shadow: 1px 1px 2px #ccc;
   position: absolute;
   width: 727px;
   height: 580px;
@@ -9,12 +9,13 @@
   vertical-align: center;
   background-color: #ffffff;
 }
-  .second-header {
+
+.second-header{
   background-image: url('../images/header4.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   position: absolute;
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
   left: 0px;
   top: 0px;
@@ -26,8 +27,8 @@
 .block4{
   position: absolute;
   height: 379px;
-  width:100%;
-  top:142px;
+  width: 100%;
+  top: 142px;
   background-color: #ffffff;
   border-bottom: 1px solid #e0dede;
 }
@@ -35,8 +36,8 @@
 .attachment{
   position: absolute;
   height: 200px;
-  width:100%;
-  top:179px;
+  width: 100%;
+  top: 179px;
   background-color: #ffffff;
   overflow-y: scroll;
 }
@@ -47,12 +48,12 @@
   padding-top: 10px;
   outline: none;
   background: none;
-  color:#00b9e6;
+  color: #00b9e6;
   font-family: Roboto;
   font-size: 16px;
   text-transform: uppercase;
   position: absolute;
-  top:91%;
+  top: 91%;
   left: 90%;
 }
 
@@ -81,7 +82,7 @@
   font-family: Roboto-Medium;
   font-size: 16px;
   outline: none;
-  border:none;
+  border: none;
   border-bottom: solid 2px #d7d7d7;
   padding-top: 5px;
   padding-bottom: 10px;
@@ -89,14 +90,14 @@
 
 .email{
   position: absolute;
-  margin-left:20px;
+  margin-left: 20px;
   top: 40px;
-  left:340px;
-  width:300px;  
+  left: 340px;
+  width: 300px;  
   font-family: Roboto-Medium;
   font-size: 16px;
   outline: none;
-  border:none;
+  border: none;
   border-bottom: solid 2px #00b9e6;
   padding-top: 5px;
   padding-bottom: 10px;
@@ -106,11 +107,11 @@
     position: absolute;
     left: 40px;
     top: 100px;
-    width:620px;    
+    width: 620px;    
     font-family: Roboto-Medium;
     font-size: 16px;
     outline: none;
-    border:none;
+    border: none;
     border-bottom: solid 2px #d7d7d7;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -118,16 +119,16 @@
 
 .attachment-counter{
   position: absolute;
-  margin-left:20px;
+  margin-left: 20px;
   top: 150px;
-  left:20px;
-  width:300px;
+  left: 20px;
+  width: 300px;
   font-size: 18px;
   font-family: Roboto-Medium;
-  color:#00b9e6;
+  color: #00b9e6;
 }
 
-.attached {
+.attached{
   list-style: none;
   width: 85%;
   margin: 0;
@@ -147,6 +148,19 @@
   left: 40px;
 }
 
+.trashcan{
+  position: absolute;
+  outline: none;
+  left: 600px;
+  background: url('../images/trashcan.png'); 
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+}
+
 .documents-icon{
    background-image: url('../images/docs.png');
 }
@@ -157,16 +171,4 @@
 
 .science-icon{
   background-image: url('../images/science.png');
-}
-
-.trashcan{
-  position: absolute;
-  outline: none;
-  left:600px;
-  background: url('../images/trashcan.png'); 
-  background-repeat: no-repeat;
-  cursor: pointer;
-  border: none;
-  width: 16px;
-  height: 16px;
 }

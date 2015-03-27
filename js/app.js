@@ -21,43 +21,43 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
         email = document.getElementById('email').value,
         message = document.getElementById('message').value;
 
-        [].forEach.call(document.querySelectorAll('#second-page .author-info'), function(a){aList = aList + a.innerText + '\r'}) ;
+        [].forEach.call(document.querySelectorAll('#second-page .attached'), function(a){aList = aList + a.innerText + '\r'}) ;
         alert(name + '\r' + email + '\r' + message + '\r' + aList);
     });
 
   document.addEventListener('mouseup' ,onUp);
-	document.addEventListener('mousedown' ,onDown);
-	document.addEventListener('mousemove' ,onMove);
+  document.addEventListener('mousedown' ,onDown);
+  document.addEventListener('mousemove' ,onMove);
 
-	function onDown(){
-		startX = event.clientX;
-		isMove = false;
-		}
-	
-	function onMove(){
-		isMove = true;
-		}
-	
-	function onUp(){
-		if(isMove){
-			if(startX - event.clientX > 15){
-				firstPage.classList.remove('current');
-    			secondPage.classList.remove('right');
-    			firstPage.classList.add('left');
-    			secondPage.classList.add('current');
-    			indicator1.classList.remove('active');
-    			indicator2.classList.add('active');
-		  }
-		  else{
+  function onDown(){
+    startX = event.clientX;
+    isMove = false;
+    }
+  
+  function onMove(){
+    isMove = true;
+    }
+  
+  function onUp(){
+    if(isMove){
+      if(startX - event.clientX > 15){
+        firstPage.classList.remove('current');
+          secondPage.classList.remove('right');
+          firstPage.classList.add('left');
+          secondPage.classList.add('current');
+          indicator1.classList.remove('active');
+          indicator2.classList.add('active');
+      }
+      if(startX - event.clientX < -15){
           firstPage.classList.remove('left');
-    		  secondPage.classList.remove('current');
-    		  firstPage.classList.add('current');
-    			secondPage.classList.add('right');
-    			indicator2.classList.remove('active');
-    			indicator1.classList.add('active');
-			}
-		}
-	}
+          secondPage.classList.remove('current');
+          firstPage.classList.add('current');
+          secondPage.classList.add('right');
+          indicator2.classList.remove('active');
+          indicator1.classList.add('active');
+      }
+    }
+  }
 
   function fireEvent(element,event){
     var evt = document.createEvent("HTMLEvents");
@@ -71,7 +71,7 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
     
     [].forEach.call(checkboxes, function(checkbox){
       checkbox.addEventListener('change', function(){
-        var selected = document.querySelectorAll('.documents input[type=checkbox]:checked');
+        var selected = col.querySelectorAll('input[type=checkbox]:checked');
     
         if(ignoreAction){
           return
@@ -89,46 +89,6 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
       });
     });
 
-    [].forEach.call(checkboxes, function(checkbox){
-      checkbox.addEventListener('change', function(){
-        var selected = document.querySelectorAll('.links input[type=checkbox]:checked');
-    
-        if(ignoreAction){
-          return
-        }
-   
-        if(selected.length < checkboxes.length){
-          addAll.classList.remove('removeall');
-          addAll.innerHTML = 'add all';
-        }
-
-        if(selected.length === checkboxes.length){
-          addAll.classList.add('removeall');
-          addAll.innerHTML = 'remove all';
-        }
-      });
-    });
-
-    [].forEach.call(checkboxes, function(checkbox){
-      checkbox.addEventListener('change', function(){
-        var selected = document.querySelectorAll('.science input[type=checkbox]:checked');
-    
-        if(ignoreAction){
-          return
-        }
-   
-        if(selected.length < checkboxes.length){
-          addAll.classList.remove('removeall');
-          addAll.innerHTML = 'add all';
-        }
-
-        if(selected.length === checkboxes.length){
-          addAll.classList.add('removeall');
-          addAll.innerHTML = 'remove all';
-        }
-      });
-    });
-    
     addAll.addEventListener('click', function(){
           if(addAll.classList.contains('removeall')){
             addAll.classList.remove('removeall');
@@ -169,7 +129,7 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
               if(checkbox.checked && !createdLi){
                 li.setAttribute('index',  colIndex + '-' + cIndex);
                 li.classList.add('attached');
-                li.innerHTML = "<p class=\"author-result\">" + "<p class=\"" + icon + "\"></p>" + p1.innerHTML + "<p class=\"author-info\">" + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p></p>";
+                li.innerHTML = "<p class=\"author-result " + icon +"\"\></p>" + p1.innerHTML + " " + p2.innerHTML + "<button class=\"trashcan\"></button>" + "</p>";
                 li.querySelector('button').addEventListener('click', function(col){
                   count = document.getElementsByClassName('attached').length;
                   checkbox.checked = false;
