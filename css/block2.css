@@ -129,33 +129,22 @@
 
 .attached {
   list-style: none;
+  width: 85%;
   margin: 0;
-  margin-left: 60px;
+  margin-left: 80px;
   margin-top: 10px;
   font-family: Roboto-Medium;
   font-size: 14px;
   color: black;
-  position: relative;
-}
-
-.author-result{
-  float:left;
-  margin:0;
-  width: 15%;
-}
-
-.author-info{
-  float: right;
-  margin:0;
-  margin-right:190px;
+  padding-bottom: 7px;
 }
 
 .icon{
   margin: 0;
   position: absolute;
-  width:16px;
+  width: 16px;
   height: 16px;
-  left:-30px;
+  left: 40px;
 }
 
 .documents-icon{
