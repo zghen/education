@@ -9,9 +9,19 @@
   height: 104px;
 }
 
+h2{
+  position: relative;
+  margin:0;
+  font-size: 18px;
+  font-family: Roboto-Medium;
+  color:#ffffff;
+  left:8%;
+  top:70%;
+}
+
 .blockhead {
   height: 142px;
-  background-position: 20% 60%;
+  background-position: 50% 40%;
   background-repeat: no-repeat;
   }
 
@@ -86,8 +96,6 @@ p{
 .science-lab p{
   margin-right: 90px;
 }
-
-
 
 .title-printed{
   font-size: 14px;
