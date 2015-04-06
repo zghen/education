@@ -26,17 +26,17 @@ h2{
   background-repeat: no-repeat;
 }
 
-.header1 {
+.documents .blockhead{
   background-image: url('../images/header.png');
   background-color: #eb5e4c;
 }
 
-.header2 {
+.links .blockhead{
   background-image: url('../images/header2.png');
   background-color: #00b9e6;  
 }
 
-.header3 {
+.science-lab .blockhead{
   background-image: url('../images/header3.png');
   background-color: #0f9d58;
 }
@@ -98,12 +98,13 @@ p{
   margin-right: 90px;
 }
 
-.title-printed{
+.articles-list p{
   font-size: 14px;
   color: #8b8b8b;
+  font-family: Roboto-Medium;
 }
 
- .description-printed{
+.col .description{
   font-size: 11px;
   font-family: Roboto-Medium;
   line-height: 16px;
@@ -146,15 +147,15 @@ p{
 	left: 66%;
 }
 
-.addall1{
+.documents .addall{
 	color: #eb5e4c;
 }
 
-.addall2{
+.links .addall{
 	color: #00b9e6;
 }
 
-.addall3{
+.science-lab .addall{
 	color: #0f9d58;
 }
 

@@ -1,4 +1,4 @@
-#second-page{
+#secondPage{
   border-radius: 4px;
   box-shadow: 1px 1px 2px #ccc;
   position: absolute;
@@ -24,7 +24,21 @@
   background-color: #00b9e6;
 }
 
-.block4{
+.send-name{
+  height: 80px;
+  width: 306px;
+  padding-left: 36px;
+  float: left;
+}
+
+.send-email{
+  height: 80px;
+  width: 306px;
+  padding-right: 62px;
+  float: right;
+}
+
+.result{
   position: absolute;
   height: 379px;
   width: 100%;

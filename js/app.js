@@ -1,13 +1,13 @@
 var indicator1 = document.getElementsByClassName('indicators indicator1 active')[0],
     indicator2 = document.getElementsByClassName('indicators indicator2')[0],
-    firstPage = document.getElementById('first-page'),    
-    secondPage = document.getElementById('second-page'),
-    secondPageAttachment = document.querySelector('#second-page .attachment'),
+    firstPage = document.getElementById('firstPage'),    
+    secondPage = document.getElementById('secondPage'),
+    secondPageAttachment = document.querySelector('#secondPage .attachment'),
     checkboxCol1 = document.getElementsByClassName('documents col'),
     checkboxCol2 = document.getElementsByClassName('links col'),
     checkboxCol3 = document.getElementsByClassName('science-lab col'),
     counter = secondPage.getElementsByClassName('attachment-counter')[0],
-    sourceList = document.querySelectorAll('#first-page li'),
+    sourceList = document.querySelectorAll('#first-Page li'),
     send = document.getElementsByClassName('send')[0],
     startX, isStart, isMove, currentIndex = 0,
     startTime = Date.now(),
@@ -21,7 +21,7 @@ var indicator1 = document.getElementsByClassName('indicators indicator1 active')
         email = document.getElementById('email').value,
         message = document.getElementById('message').value;
 
-        [].forEach.call(document.querySelectorAll('#second-page .attached'), function(a){aList = aList + a.innerText + '\r'}) ;
+        [].forEach.call(document.querySelectorAll('#secondPage .attached'), function(a){aList = aList + a.innerText + '\r'}) ;
         alert(name + '\r' + email + '\r' + message + '\r' + aList);
     });
 
